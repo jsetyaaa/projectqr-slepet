@@ -45,7 +45,7 @@ if (isset($_POST['qrcode']) && isset($_POST['text'])) {
         // Menyimpan entri ke dalam tabel history
         $user_id = $_SESSION['user_id'];
         $query = "INSERT INTO history (user_id, text, barcode_file) VALUES ('$user_id', '$text', '$fileName')";
-        if ($conn->query($query) === TRUE) {
+        if ($conn->query($query) === true) {
             // Jika berhasil menyimpan ke database, kirimkan respon JSON dengan informasi file untuk alert
             echo json_encode(array("success" => true, "fileURL" => "qr_codes/$fileName", "fileName" => $fileName));
         } else {
