@@ -23,6 +23,8 @@ jobs:
         else
           echo "No composer.json file found, skipping composer install"
         fi
+    - name: php-codesniffer
+      uses: pipeline-components/php-codesniffer@v0.12.3
 
   web-deploy:
     name: 🎉 Auto Deploy
