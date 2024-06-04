@@ -25,6 +25,9 @@ jobs:
         fi
     - name: php-codesniffer
       uses: pipeline-components/php-codesniffer@v0.12.3
+      with:
+        directory: .
+        options: --standard=PSR2
 
   web-deploy:
     name: 🎉 Auto Deploy
