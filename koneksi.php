@@ -1,9 +1,9 @@
 <?php
 // Informasi koneksi database
 $servername = "localhost";
-$usernamedb = "${{ secrets.DB_USERNAME }}";
-$password = "${{ secrets.DB_PASSWORD }}";
-$database = "${{ secrets.DB_DATABASE }}";
+$usernamedb = "qrgenera_slepet";
+$password = "Slepet123";
+$database = "qrgenera_qrgenerator";
 
 // Buat koneksi
 $conn = new mysqli($servername, $usernamedb, $password, $database);
