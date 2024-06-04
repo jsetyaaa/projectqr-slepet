@@ -5,8 +5,8 @@ session_start();
 // Periksa apakah pengguna sudah login
 if (!isset($_SESSION['user_id'])) {
    // Jika belum, alihkan ke halaman login
-header("Location: index.php");
-exit();
+    header("Location: index.php");
+    exit();
 }
 ?>
 
