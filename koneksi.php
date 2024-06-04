@@ -1,9 +1,9 @@
 <?php
 // Informasi koneksi database
 $servername = "localhost";
-$usernamedb = "root";
-$password = "";
-$database = "qrgenerator";
+$usernamedb = "${{ secrets.DB_USERNAME }}";
+$password = "${{ secrets.DB_PASSWORD }}";
+$database = "${{ secrets.DB_DATABASE }}";
 
 // Buat koneksi
 $conn = new mysqli($servername, $usernamedb, $password, $database);
