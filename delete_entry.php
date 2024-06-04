@@ -28,20 +28,12 @@ if (isset($_GET['id'])) {
         if (file_exists($filePath)) {
             // Hapus file
             if (unlink($filePath)) {
-                // Debug: Cetak pesan setelah penghapusan file berhasil
-                echo "<script>alert('File deleted successfully.');</script>";
+                
             } else {
-                // Debug: Cetak pesan jika penghapusan file gagal
-                echo "<script>alert('Error deleting file.');</script>";
+                header("Location: history.php");
+                exit();
             }
-        } else {
-            // Debug: Cetak pesan jika file tidak ditemukan
-            echo "<script>alert('File not found.');</script>";
         }
-    } else {
-        // Debug: Cetak pesan jika data di database tidak ditemukan
-        echo "<script>alert('Entry not found in database.');</script>";
-    }
 
     // Hapus entri dari tabel history setelah menghapus gambar
     $query_delete = "DELETE FROM history WHERE id = $id AND user_id = " . $_SESSION['user_id'];
@@ -58,6 +50,8 @@ if (isset($_GET['id'])) {
     // Jika tidak ada ID yang diterima, kirimkan respon error
     echo json_encode(array("success" => false, "error" => "No entry ID received"));
     exit();
+}
+
 }
 
 // Menutup koneksi
