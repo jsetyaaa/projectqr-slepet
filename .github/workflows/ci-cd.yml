@@ -1,0 +1,51 @@
+on:
+  push:
+    branches: [ main ]
+
+name: Integration and Deploy on push
+jobs:
+  integration:
+    name: 🔍 Integration
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+
+    - name: Install dependencies
+      run: |
+        if [ -f composer.json ]; then
+          composer install --no-dev --no-interaction --prefer-dist
+        else
+          echo "No composer.json file found, skipping composer install"
+        fi
+    - name: PHP Code Sniffer (php-actions)
+      uses: php-actions/phpcs@v1.0.0
+      with:
+        php_version: '7.4'
+
+  web-deploy:
+    name: 🎉 Auto Deploy
+    runs-on: ubuntu-latest
+    needs: integration
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 2
+
+    - name: 📂 FTP Deploy Action
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        protocol: ftps
+        port: ${{ secrets.FTP_PORT }}
+        exclude: .git*
+          - .git*/**
+          - .github
