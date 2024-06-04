@@ -2,7 +2,7 @@
 // Informasi koneksi database
 $servername = "localhost";
 $usernamedb = "qrgenera_slepet";
-$password = "Slepet123";
+$password = "Slepet123456";
 $database = "qrgenera_qrgenerator";
 
 // Buat koneksi
