@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $insert_query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
 
             // Menjalankan query
-            if ($conn->query($insert_query) === TRUE) {
+            if ($conn->query($insert_query) === true) {
                 // Redirect ke halaman login setelah berhasil mendaftar
                 header("Location: index.php");
                 exit(); // Penting untuk menghentikan eksekusi selanjutnya setelah redirect
