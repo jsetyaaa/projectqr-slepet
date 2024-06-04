@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
         // Periksa apakah file ada
         if (file_exists($filePath)) {
             // Hapus file
-            if (unlink($filePath)) {                
+            if (unlink($filePath)) {
             } else {
                 header("Location: history.php");
                 exit();
@@ -35,20 +35,20 @@ if (isset($_GET['id'])) {
         }
 
     // Hapus entri dari tabel history setelah menghapus gambar
-    $query_delete = "DELETE FROM history WHERE id = $id AND user_id = " . $_SESSION['user_id'];
+        $query_delete = "DELETE FROM history WHERE id = $id AND user_id = " . $_SESSION['user_id'];
         if ($conn->query($query_delete) === true) {
             // Redirect back to history page
-        header("Location: history.php");
-        exit();
+            header("Location: history.php");
+            exit();
         } else {
             // Jika terjadi kesalahan saat menghapus dari database, kirimkan respon error
-        echo json_encode(array("success" => false, "error" => "Error deleting entry: " . $conn->error));
+            echo json_encode(array("success" => false, "error" => "Error deleting entry: " . $conn->error));
             exit();
         }
     } else {
         // Jika tidak ada ID yang diterima, kirimkan respon error
-      echo json_encode(array("success" => false, "error" => "No entry ID received"));
-      exit();
+        echo json_encode(array("success" => false, "error" => "No entry ID received"));
+        exit();
     }
 }
 
