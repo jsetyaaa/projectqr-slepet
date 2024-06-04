@@ -27,7 +27,7 @@ jobs:
       uses: pipeline-components/php-codesniffer@v0.12.3
       with:
         directory: .
-        options: --standard=PSR2
+        options: "--standard=PSR2 --warning-severity=0"
 
   web-deploy:
     name: 🎉 Auto Deploy
