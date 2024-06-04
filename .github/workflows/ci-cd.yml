@@ -35,7 +35,7 @@ jobs:
       uses: php-actions/phpcs@v1.0.0
       with:
         php_version: '7.4'
-        standard: 'phpcs.xml'
+        standard: '.github/workflows/phpcs.xml'
 
   web-deploy:
     name: 🎉 Auto Deploy
