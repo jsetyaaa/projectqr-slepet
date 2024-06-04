@@ -1,4 +1,4 @@
-function generateQRCode(text, width, height, callback) 
+function generateQRCode(text, width, height, callback)
 {
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         text: text,
