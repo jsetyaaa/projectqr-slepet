@@ -35,13 +35,11 @@ jobs:
         fetch-depth: 2
 
     - name: 📂 FTP Deploy Action
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        port: ${{ secrets.FTP_PORT }}
         exclude: .git*
           - .git*/**
           - .github
