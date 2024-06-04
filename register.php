@@ -16,8 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($check_query);
 
         if ($result->num_rows > 0) {
-            // Jika username atau email sudah terdaftar, tampilkan pesan kesalahan
-            echo "Username or email already registered";
+            // Jika username atau email sudah terdaftar, kembalikan ke daftar.php
+            header("Location: daftar.php");
+            echo "User tersebut sudah terdaftar"
         } else {
             // Jika username dan email belum terdaftar, hash password
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
