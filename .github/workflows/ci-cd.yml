@@ -23,6 +23,14 @@ jobs:
         else
           echo "No composer.json file found, skipping composer install"
         fi
+
+    - name: Check for phpcs.xml
+      run: |
+        if [ ! -f "phpcs.xml" ]; then
+         echo "Error: phpcs.xml not found!"
+        exit 1
+        fi
+
     - name: PHP Code Sniffer (php-actions)
       uses: php-actions/phpcs@v1.0.0
       with:
