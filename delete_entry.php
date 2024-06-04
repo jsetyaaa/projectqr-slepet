@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
 
     // Hapus entri dari tabel history setelah menghapus gambar
     $query_delete = "DELETE FROM history WHERE id = $id AND user_id = " . $_SESSION['user_id'];
-    if ($conn->query($query_delete) === TRUE) {
+    if ($conn->query($query_delete) === true) {
         // Redirect back to history page
         header("Location: history.php");
         exit();
