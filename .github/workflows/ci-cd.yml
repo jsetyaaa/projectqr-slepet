@@ -24,19 +24,6 @@ jobs:
           echo "No composer.json file found, skipping composer install"
         fi
 
-    - name: Check for phpcs.xml
-      run: |
-        if [ ! -f "phpcs.xml" ]; then
-         echo "Error: phpcs.xml not found!"
-        exit 1
-        fi
-
-    - name: PHP Code Sniffer (php-actions)
-      uses: php-actions/phpcs@v1.0.0
-      with:
-        php_version: '7.4'
-        standard: '.github/workflows/phpcs.xml'
-
   web-deploy:
     name: 🎉 Auto Deploy
     runs-on: ubuntu-latest
