@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Menjalankan query
             if ($conn->query($insert_query) === TRUE) {
-                echo "User registered successfully";
                 // Redirect ke halaman login setelah berhasil mendaftar
                 header("Location: index.php");
                 exit(); // Penting untuk menghentikan eksekusi selanjutnya setelah redirect
