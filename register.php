@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             // Jika username atau email sudah terdaftar, kembalikan ke daftar.php
             header("Location: daftar.php");
-            echo "User tersebut sudah terdaftar"
+            exit();
         } else {
             // Jika username dan email belum terdaftar, hash password
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
