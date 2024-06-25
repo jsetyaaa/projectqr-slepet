@@ -2,7 +2,9 @@
 document.getElementById('generate-button').addEventListener('click', function () {
     generateQRCode();
 });
-
+// Define width and height for the QR code
+var width = 500; // Example width
+var height = 500; // Example height
 function generateQRCode(text, width, height, callback)
 {
     var qrcodeContainer = document.getElementById("qrcode");
