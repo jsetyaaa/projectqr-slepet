@@ -45,6 +45,7 @@ if (isset($_SESSION['user_id'])) {
                     <span class="mx-4 text-gray-500">or</span>
                     <div class="w-full border-t border-gray-300"></div>
                 </div>
+                
                 <button onclick="window.location.href='./daftar.php';" type="button" class="w-96 bg-green-500 p-3 text-white rounded-md"> Daftar</button>
                 <p class="text-center mt-6">Belum punya akun? <a href="./daftar.php" class="text-blue-500">Daftar</a></p>
             </div>
