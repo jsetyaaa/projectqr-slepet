@@ -29,6 +29,12 @@ jobs:
         directory: .
         options: "--standard=PSR2 --warning-severity=0"
 
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        node-version: '20'
+
+
   web-deploy:
     name: 🎉 Auto Deploy
     runs-on: ubuntu-latest
@@ -48,3 +54,4 @@ jobs:
         exclude: |
           **/.git*
           **/.git*/**
+  
