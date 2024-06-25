@@ -25,7 +25,7 @@ function generateQRCode(text, width, height, callback)
     }, 1000);
 }
 
-function downloadQR() 
+function downloadQR()
 {
     var text = document.getElementById("text-input").value.trim();
     if (!text) {
