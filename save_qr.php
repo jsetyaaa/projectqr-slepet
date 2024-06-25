@@ -85,4 +85,3 @@ if (isset($_POST['qrcode']) && isset($_POST['text'])) {
     // If QR code data URL is not received, send error response
     echo json_encode(array("success" => false, "error" => "Data URL QRCode not received"));
 }
-?>
