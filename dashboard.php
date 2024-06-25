@@ -12,8 +12,10 @@ if (!isset($_SESSION['user_id'])) {
    exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +25,7 @@ if (!isset($_SESSION['user_id'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+    
 </head>
 <body class="bg-gray-200">
     <div class="container mx-auto p-4">
@@ -67,8 +70,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>  
         </div>
     </div>
-    <script src="generate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+   
 
     <!--navigasi-->
 <div id="drawer-navigation"
@@ -129,7 +131,8 @@ tabindex="-1" aria-labelledby="drawer-navigation-label">
     </ul>
 </div>
 </div>
-
+<script src="./generate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 
 
