@@ -3,7 +3,8 @@ document.getElementById('generate-button').addEventListener('click', function ()
     generateQRCode();
 });
 
-function generateQRCode(text, width, height, callback) {
+function generateQRCode(text, width, height, callback)
+{
     var qrcodeContainer = document.getElementById("qrcode");
     qrcodeContainer.innerHTML = ""; // Bersihkan container QR code sebelumnya
 
@@ -24,7 +25,8 @@ function generateQRCode(text, width, height, callback) {
     }, 1000);
 }
 
-function downloadQR() {
+function downloadQR() 
+{
     var text = document.getElementById("text-input").value.trim();
     if (!text) {
         alert("Please generate a QR code first by entering some text.");
