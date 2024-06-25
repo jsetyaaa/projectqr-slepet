@@ -33,7 +33,7 @@ function downloadQR()
         return;
     }
 
-    generateQRCode(text, 200, 200, function (qrCodeURL) {
+    generateQRCode(text, width, height, function (qrCodeURL) {
         // Buat link untuk download
         var link = document.createElement('a');
         link.download = 'qrcode.png'; // Nama file yang akan di-download
@@ -74,7 +74,7 @@ document.getElementById("generate-button").addEventListener("click", function ()
         return;
     }
 
-    generateQRCode(text, 200, 200, function (qrCodeURL) {
+    generateQRCode(text, width, height, function (qrCodeURL) {
         // Set QR code image source
         var qrcodeImage = document.getElementById("qrcode");
         if (qrcodeImage) {
