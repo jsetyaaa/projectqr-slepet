@@ -41,20 +41,20 @@ if (isset($_SESSION['user_id'])) {
                         <div>
                             <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your
                                 username</label>
-                            <input type="username" name="username" id="username" class="w-96 p-3 border border-black" placeholder="username" required="">
+                            <input type="username" name="username" id="username" class="w-auto md:w-96 p-3 border border-black" placeholder="username" required="">
                         </div>
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your
                                 email</label>
-                            <input type="email" name="email" id="email" class="w-96 p-3 border border-black" placeholder="name@company.com" required="">
+                            <input type="email" name="email" id="email" class="w-auto md:w-96 p-3 border border-black" placeholder="nama@mail.com" required="">
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password</label>
-                            <input type="password" name="password" id="password" placeholder="••••••••" class="w-96 p-3 border border-black" required="">
+                            <input type="password" name="password" id="password" placeholder="••••••••" class="w-auto md:w-96 p-3 border border-black" required="">
                         </div>
-                        <button type="submit" class="w-96 bg-green-500 text-white p-3 rounded-md"> Daftar Akun</button>
+                        <button type="submit" class="w-auto md:w-96 bg-green-500 text-white p-3 rounded-md"> Daftar Akun</button>
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                            Sudah punya akun? <a href="./login.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Masuk</a>
+                            Sudah punya akun? <a href="./login.php" class="font-medium text-primary-600 hover:underline dark:text-blue-500">Masuk</a>
                         </p>
                     </form>
                 </div>
