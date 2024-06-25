@@ -27,7 +27,7 @@ if (isset($_POST['qrcode']) && isset($_POST['text'])) {
     $fileName = uniqid() . ".jpg"; // Use JPEG format
 
     // Create a white background image with size 200x200
-    $image = imagecreatetruecolor(200, 200);
+    $image = imagecreatetruecolor(500, 500);
     $white = imagecolorallocate($image, 255, 255, 255);
     imagefill($image, 0, 0, $white);
 
@@ -45,8 +45,8 @@ if (isset($_POST['qrcode']) && isset($_POST['text'])) {
     $qrCodeHeight = imagesy($qrCode);
 
     // Draw the QR code image in the center of the white background
-    $x = (200 - $qrCodeWidth) / 2;
-    $y = (200 - $qrCodeHeight) / 2;
+    $x = (500 - $qrCodeWidth) / 2;
+    $y = (500 - $qrCodeHeight) / 2;
     imagecopy($image, $qrCode, $x, $y, 0, 0, $qrCodeWidth, $qrCodeHeight);
 
     // Save the image in JPEG format with quality 100%

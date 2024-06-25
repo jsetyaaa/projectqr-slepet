@@ -2,9 +2,7 @@
 document.getElementById('generate-button').addEventListener('click', function () {
     generateQRCode();
 });
-// Define width and height for the QR code
-var width = 500; // Example width
-var height = 500; // Example height
+
 function generateQRCode(text, width, height, callback)
 {
     var qrcodeContainer = document.getElementById("qrcode");
@@ -12,8 +10,8 @@ function generateQRCode(text, width, height, callback)
 
     var qrcode = new QRCode(qrcodeContainer, {
         text: text,
-        width: width,
-        height: height,
+        width: 200,
+        height: 200,
         colorDark: "#000000",  // Hitam untuk foreground
         colorLight: "#ffffff", // Putih untuk background
         correctLevel: QRCode.CorrectLevel.H
@@ -35,7 +33,7 @@ function downloadQR()
         return;
     }
 
-    generateQRCode(text, width, height, function (qrCodeURL) {
+    generateQRCode(text, 200, 200, function (qrCodeURL) {
         // Buat link untuk download
         var link = document.createElement('a');
         link.download = 'qrcode.png'; // Nama file yang akan di-download
@@ -76,7 +74,7 @@ document.getElementById("generate-button").addEventListener("click", function ()
         return;
     }
 
-    generateQRCode(text, width, height, function (qrCodeURL) {
+    generateQRCode(text, 200, 200, function (qrCodeURL) {
         // Set QR code image source
         var qrcodeImage = document.getElementById("qrcode");
         if (qrcodeImage) {
