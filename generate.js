@@ -10,8 +10,8 @@ function generateQRCode(text, width, height, callback)
 
     var qrcode = new QRCode(qrcodeContainer, {
         text: text,
-        width: 200,
-        height: 200,
+        width: width,
+        height: height,
         colorDark: "#000000",  // Hitam untuk foreground
         colorLight: "#ffffff", // Putih untuk background
         correctLevel: QRCode.CorrectLevel.H
